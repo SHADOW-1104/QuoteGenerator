@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    color: white;
+    background-color: black;
+  }
+  
+  .box {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 5px rgb(0, 238, 255);
+  }
+  
+  .box::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 1000%;
+    background: #0ef;
+    animation: rotate 5s linear infinite;
+    z-index: -10;
+  }
+  
+  .box::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: 10px;
+    background-color: rgb(14, 13, 13);
+    z-index: -10;
+  }
+  
+  .quoteBox {
+    padding: 20px 0;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+  }
+  
+  .quoteBox * {
+    margin: 10px;
+    outline: none;
+    text-decoration: none;
+  }
+  
+  .quoteBox button {
+    color: aqua;
+    font-weight: bold;
+    border: 2px solid aqua;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: 0.2s ease;
+    box-shadow: 0 0 10px aqua;
+    background-color: transparent;
+  }
+  
+  .quoteBox button:hover {
+    transition: 0.2s ease;
+    color: black;
+    background-color: aqua;
+  }
+  
+  .quoteBox button:active {
+    transition: 0.2s;
+    transform: scale(0.9);
+  }
+  
+  .quoteBox a {
+    color: aqua;
+    border-bottom: 3px solid aqua;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
